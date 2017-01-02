@@ -1,5 +1,5 @@
  
-###Strange behaviours of Global_active_power and Sub_metering_2, any ideas would be appreciated
+###Strange behaviours of Global_active_power and Sub_metering_2, any ideas would be appreciated :^)
 
 
 ##Workings
