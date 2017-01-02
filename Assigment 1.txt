@@ -6,14 +6,14 @@
 
 ###Reading in the data
 
-household_data <- read.csv("~/Desktop/Data Science Hopkins/Exploratory Data Analysis/Labs/ExData_Plotting1/Assignment 1/household_power_consumption.txt", sep=";")
+all_data <- read.csv("~/Desktop/Data Science Hopkins/Exploratory Data Analysis/Labs/ExData_Plotting1/Assignment 1/household_power_consumption.txt", sep=";")
 date1 <- as.Date("2007/02/01")
 date2 <- as.Date("2007/02/02")
 
 
 ###Data Conversion
 
-all_data <- data
+
 all_data$Date <- as.Date(all_data$Date, "%d/%m/%Y")
 case <- all_data$Date>= date1 & all_data$Date <= date2
 
