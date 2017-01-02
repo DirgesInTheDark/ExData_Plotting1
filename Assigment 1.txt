@@ -1,5 +1,5 @@
  
-###I am aware of the strange behaviours of Global_active_power and  Sub_metering_2, will attempt to solve on a later submission
+###Strange behaviours of Global_active_power and Sub_metering_2, any ideas would be appreciated
 
 
 ##Workings
@@ -13,7 +13,7 @@ date2 <- as.Date("2007/02/02")
 
 ###Data Conversion
 
-
+#all_data <- data
 all_data$Date <- as.Date(all_data$Date, "%d/%m/%Y")
 case <- all_data$Date>= date1 & all_data$Date <= date2
 
