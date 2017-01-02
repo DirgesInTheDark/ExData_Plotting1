@@ -1,3 +1,7 @@
+ 
+###I am aware of the strange behaviours of Global_active_power and  Sub_metering_2, will attempt to solve on a later submission
+
+
 ##Workings
 
 ###Reading in the data
@@ -13,8 +17,10 @@ all_data <- data
 all_data$Date <- as.Date(all_data$Date, "%d/%m/%Y")
 case <- all_data$Date>= date1 & all_data$Date <= date2
 
+#Working Subset
 household_data <- subset(all_data, case)
 household_data$Time <- strptime(paste(household_data$Date, household_data$Time), format = "%Y-%m-%d %H:%M:%S")
+
 household_data$Global_active_power <-as.numeric(household_data$Global_active_power)
 #as.numeric really stuffs up the data here, but messes everything up consistently? 
 #look into it
@@ -44,16 +50,17 @@ par(mfcol=c(2,2))
 plot(household_data$Time, household_data$Global_active_power, type = "l", xlab = "time", ylab = "Global Active Power (kilowatts)")
 
 #Plot4-2
-plot(household_data$Time, household_data$Sub_metering_1, type = "l", xlab = "time", ylab = "Energy sub metering")
+plot(household_data$Time, household_data$Sub_metering_1, type = "l", 
+xlab = "time", ylab = "Energy sub metering")
 lines(household_data$Time, household_data$Sub_metering_2, type = "l", col = "red")
 lines(household_data$Time, household_data$Sub_metering_3, type = "l", col = "blue")
 legend("topright", legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
 lty = 1, col=c("black","red","blue"))
 
-#New plot1
+#Plot4-3
 plot(household_data$Time, household_data$Voltage, type = "l", xlab = "datetime", ylab = "Voltage")
 
-#New plot 2
+#Plot4-4
 plot(household_data$Time, household_data$Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global_reactive_power")
 
 dev.off()
